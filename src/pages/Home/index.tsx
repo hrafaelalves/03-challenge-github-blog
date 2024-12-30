@@ -2,6 +2,7 @@ import { Building2, SquareArrowOutUpRight, Users } from "lucide-react"
 import { DefaultContainer } from "../../styles/global"
 import { ContentContainer, FormSearch, ProfileContainer, ProfileDetails, ProfileContent, PublicationsContainer, SocialLinks, ProfileDescription } from "./styles"
 import { Github } from "../../components/Icons/Github"
+import { Card } from "../Post/Card"
 
 export const Home = () => {
   return (
@@ -37,8 +38,13 @@ export const Home = () => {
       </FormSearch>
 
       <ContentContainer>
-        <div>card</div>
-        <div>card</div>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </ContentContainer>
     </DefaultContainer>
   )

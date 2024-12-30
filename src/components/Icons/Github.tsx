@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const GithubSvg = styled.svg`
+export const GithubSvg = styled.svg`
   width: 18px;
   height: 18px;
   fill: ${({ theme }) => theme.label};

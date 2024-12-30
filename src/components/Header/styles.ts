@@ -13,6 +13,8 @@ export const HeaderContainer = styled.header`
 
 export const Logo = styled.img`
   z-index: 1;
+
+  margin-top: -4rem;
 `
 
 export const CoverImg = styled.img`

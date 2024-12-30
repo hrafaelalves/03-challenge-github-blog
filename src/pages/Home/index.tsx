@@ -1,5 +1,7 @@
+import { Building2, SquareArrowOutUpRight, Users } from "lucide-react"
 import { DefaultContainer } from "../../styles/global"
-import { ContentContainer, FormSearch, ProfileContainer, ProfileDetails, PublicationsContainer, SocialLinks } from "./styles"
+import { ContentContainer, FormSearch, ProfileContainer, ProfileDetails, ProfileContent, PublicationsContainer, SocialLinks, ProfileDescription } from "./styles"
+import { Github } from "../../components/Icons/Github"
 
 export const Home = () => {
   return (
@@ -7,21 +9,21 @@ export const Home = () => {
       <ProfileContainer>
         <img src="https://github.com/hrafaelalves.png" alt="" />
 
-        <ProfileDetails>
-          <div>
+        <ProfileContent>
+          <ProfileDetails>
             <h1>Hugo Rafael Alves</h1>
 
-            <a href="http://">GITHUB</a>
-          </div>
+            <a href="https://github.com/hrafaelalves">GITHUB <SquareArrowOutUpRight /> </a>
+          </ProfileDetails>
 
-          <p>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</p>
+          <ProfileDescription>Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat pulvinar vel mass.</ProfileDescription>
 
           <SocialLinks>
-            <a href="http://">hrafaelalves</a>
-            <a href="http://">hrafaelalves</a>
-            <a href="http://">hrafaelalves</a>
+            <a href="http://"><Github />hrafaelalves</a>
+            <a href="http://"><Building2 /> Ab Inbev</a>
+            <a href="http://"><Users /> 8 seguidores</a>
           </SocialLinks>
-        </ProfileDetails>
+        </ProfileContent>
       </ProfileContainer>
 
       <PublicationsContainer>

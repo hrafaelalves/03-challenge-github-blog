@@ -18,6 +18,12 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     font-family: 'Nunito', sans-serif;
   }
+
+  body, input, textarea, button {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+  }
 `
 
 export const DefaultContainer = styled.div`

@@ -11,7 +11,7 @@ export const HeaderContainer = styled.header`
   position: relative;
 `
 
-export const Logo = styled.img`
+export const Logo = styled.a`
   z-index: 1;
 
   margin-top: -4rem;

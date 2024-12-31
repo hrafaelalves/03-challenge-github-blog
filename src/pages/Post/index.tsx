@@ -8,7 +8,8 @@ import { PostContentRender } from './components/PostContentRender';
 const sampleContent = `
 Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.
 
-Dynamic typing
+### Dynamic typing
+
 JavaScript is a loosely typed and dynamic language. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types:
 \`\`\`javascript
 let foo = 42;   // foo is now a number
@@ -18,23 +19,31 @@ foo = true;     // foo is now a boolean
 `;
 
 export const Post = () => {
-  const { slug } = useParams<{ slug: string }>();
-  console.log(slug);
+  // const { slug } = useParams<{ slug: string }>();
 
   return (
     <DefaultContainer>
       <PostDetails>
         <header>
           <Link to="/"> <ChevronLeft /> Voltar</Link>
-          <Link to="/">Ver no github <Github /></Link>
+
+          <a href='https://github.com/hrafaelalves/03-challenge-github-blog/issues/1' target="_blank" rel="noopener noreferrer">
+            Ver no github <Github />
+          </a>
         </header>
 
         <h1>JavaScript data types and data structures</h1>
 
         <SocialLinks>
-          <a href="http://"><Github />hrafaelalves</a>
-          <a href="http://"><Building2 /> Ab Inbev</a>
-          <a href="http://"><Users /> 8 seguidores</a>
+          <a href="https://github.com/hrafaelalves" target="_blank" rel="noopener noreferrer">
+            <Github />hrafaelalves
+          </a>
+          <a href="https://www.ab-inbev.com/" target="_blank" rel="noopener noreferrer">
+            <Building2 /> Ab Inbev
+          </a>
+          <a href="#">
+            <Users /> 10 seguidores
+          </a>
         </SocialLinks>
       </PostDetails>
 

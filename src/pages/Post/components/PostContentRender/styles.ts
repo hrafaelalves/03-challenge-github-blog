@@ -5,13 +5,23 @@ export const MarkdownContainer = styled.div`
   font-size: 1rem;
 
   code {
-    display: flex;
-
     border-radius: 10px;
-    padding: 1rem;
-
     width: 100%;
-    background-color: ${({ theme }) => theme.post};
-    border-radius: 4px;
+  }
+
+  pre {
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  h3{
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: ${({ theme }) => theme.blue};
+    font-weight: 400;
   }
 `;

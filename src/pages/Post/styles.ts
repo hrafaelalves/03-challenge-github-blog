@@ -2,21 +2,24 @@ import styled from "styled-components";
 import { GithubSvg } from "../../components/Icons/Github";
 
 export const PostDetails = styled.div`
+  position: relative;
+
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
   gap: 2rem;
+
   padding: 2rem;
 
   background-color: ${({ theme }) => theme.profile};
   border-radius: 10px;
   box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
-  margin-bottom: 4.5rem;
 
+  margin-bottom: 2.5rem;
   margin-top: -5rem;
+
   z-index: 10;
-  position: relative;
 
   header{
     display: flex;

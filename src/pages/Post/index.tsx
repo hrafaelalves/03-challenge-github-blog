@@ -4,6 +4,7 @@ import { PostContent, PostDetails, SocialLinks } from './styles';
 import { Github } from '../../components/Icons/Github';
 import { Building2, ChevronLeft, Users } from 'lucide-react';
 import { PostContentRender } from './components/PostContentRender';
+import { useIssue } from '../../hooks/use-issues';
 
 const sampleContent = `
 Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn.
@@ -19,7 +20,10 @@ foo = true;     // foo is now a boolean
 `;
 
 export const Post = () => {
-  // const { slug } = useParams<{ slug: string }>();
+  const { id } = useParams<{ id: string }>();
+
+  const { data } = useIssue(Number(id));
+  console.log(data)
 
   return (
     <DefaultContainer>
@@ -32,7 +36,7 @@ export const Post = () => {
           </a>
         </header>
 
-        <h1>JavaScript data types and data structures</h1>
+        <h1>{data?.title}</h1>
 
         <SocialLinks>
           <a href="https://github.com/hrafaelalves" target="_blank" rel="noopener noreferrer">
@@ -48,7 +52,7 @@ export const Post = () => {
       </PostDetails>
 
       <PostContent>
-        <PostContentRender content={sampleContent} />
+        <PostContentRender content={data?.body || ""} />
       </PostContent>
     </DefaultContainer>
   )

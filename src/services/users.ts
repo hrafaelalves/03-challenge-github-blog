@@ -12,7 +12,7 @@ interface UserData {
 }
 
 export async function fetchUser(user: string) {
-  const response = await api.get<UserData>(`/users/${user}`);
+  const response = await api.get<UserData[]>(`/users/${user}`);
 
   return response.data
 }

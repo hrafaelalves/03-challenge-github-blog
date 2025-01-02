@@ -1,27 +1,18 @@
 
-import { Card } from '../../../Post/Card'
+import { Card } from '../../../../components/Card'
 import { ContentContainer } from './styles'
+import { IssuesContext } from '../../../../contexts/IssuesContext';
+import { useContextSelector } from 'use-context-selector';
 
-interface IssuesListProps {
-  items: Array<{
-    title: string;
-    id: number;
-    body: string;
-    created_at: string;
-    comments: number;
-    user: {
-      id: number;
-      login: string;
-    }
-  }>;
-}
-export const IssuesList = ({ items }: IssuesListProps) => {
+export const IssuesList = () => {
+  const issues = useContextSelector(IssuesContext, (context) => context.issues);
 
   return (
     <ContentContainer>
-      {items && items.map((issue) => (
+      {issues.items && issues.items.map((issue) => (
         <Card
           key={issue.id}
+          number={issue.number}
           title={issue.title}
           date={issue.created_at}
           content={issue.body}

@@ -6,5 +6,5 @@ dayjs.extend(relativeTime);
 dayjs.locale("pt-br");
 
 export function formatRelativeTime(date: string | Date): string {
-  return dayjs(date).fromNow();
+  return date ? dayjs(date).fromNow() : "";
 }

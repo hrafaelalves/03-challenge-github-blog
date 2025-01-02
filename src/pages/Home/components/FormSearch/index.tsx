@@ -1,31 +1,46 @@
+import { ChangeEvent, useCallback, useEffect, useState } from "react";
+
 import { InputSearch, PublicationsContainer } from "./styles"
-import { ChangeEvent } from "react";
+import { IssuesContext } from "../../../../contexts/IssuesContext";
+import { useDebounce } from "../../../../hooks/use-debounce";
 
-interface FormSearchProps {
-  onSearch: (search: string) => void;
-  total_posts: number;
-  search: string
-}
+import { useContextSelector } from "use-context-selector";
 
-export const FormSearch = ({ onSearch, total_posts, search }: FormSearchProps) => {
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    onSearch(value)
+export const FormSearch = () => {
+
+  const { issues, fetchIssuesList } = useContextSelector(IssuesContext, (context) => ({
+    issues: context.issues,
+    fetchIssuesList: context.fetchIssuesList
+  }));
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
+  const handleChange = async (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
   }
+
+  const fetchSearchResults = useCallback((search: string) => {
+    fetchIssuesList(search);
+  }, [fetchIssuesList]);
+
+  useEffect(() => {
+    fetchSearchResults(debouncedSearchTerm);
+  }, [debouncedSearchTerm, fetchSearchResults]);
 
   return (
     <>
       <PublicationsContainer>
         <h3>Publicações</h3>
 
-        <span>{total_posts} publicações</span>
+        <span>{issues.total_count} publicações</span>
       </PublicationsContainer>
 
       <InputSearch>
         <input
           type="text"
           placeholder="Buscar conteúdo"
-          value={search}
+          value={searchTerm}
           onChange={handleChange}
         />
       </InputSearch>

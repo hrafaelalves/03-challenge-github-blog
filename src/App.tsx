@@ -11,8 +11,8 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <QueryClientProvider client={queryClient}>
 
+      <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Router />
         </BrowserRouter>

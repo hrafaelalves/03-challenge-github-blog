@@ -1,10 +1,10 @@
 import { Building2, SquareArrowOutUpRight, Users } from "lucide-react"
-import { Github } from "../../../../components/Icons/Github"
 import { ProfileContainer, ProfileContent, ProfileDescription, ProfileDetails, GithubDetails } from "./styles"
+import { Github } from "../../../../components/Icons/Github"
 import { useUser } from "../../../../hooks/use-user"
 
 export const Profile = () => {
-  const { data, error, isLoading } = useUser("hrafaelalves");
+  const { data } = useUser("hrafaelalves");
 
   return (
     <ProfileContainer>

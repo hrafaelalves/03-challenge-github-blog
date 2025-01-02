@@ -70,4 +70,6 @@ export const SocialLinks = styled.div`
   }
 `
 
-export const PostContent = styled.div``
+export const PostContent = styled.div`
+  padding-bottom: 5rem;
+`

@@ -21,10 +21,14 @@ export const PostCard = styled.div`
       font-size: 1.125rem;
       line-height: 1.6rem;
       color: ${({ theme }) => theme.title};
-      cursor: pointer;
 
-      &:hover{
-        text-decoration: underline;
+      a{
+        color: ${({ theme }) => theme.title};
+        text-decoration: none;
+
+        &:hover{
+          text-decoration: underline;
+        }
       }
     }
 
